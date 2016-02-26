@@ -9,6 +9,8 @@ public class icsFileGenerator
 {
 	public static void main (String[] args)
 	{
+		
+		//will hold the details for the .ics file in this string
 		String calendarDetails;
 		
 		calendarDetails = "BEGIN:VCALENDAR\n"
@@ -34,8 +36,19 @@ public class icsFileGenerator
 			+"END:VEVENT\n"
 			+"END:VCALENDAR\n";
 		
-		System.out.print(calendarDetails);
-			
+		//print writer will output the string as a .ics file
+		//file can be found in the same directory as src folder and bin folder
+		try (PrintWriter output = new PrintWriter ("Calendar.ics"))
+		{
+			output.print(calendarDetails);
+			System.out.println("Successfully created Calendar.ics file!");
+		}
+		
+		//catches file not found exception
+		catch (IOException e)
+		{
+			System.out.println("File not found!");
+		}
 		
 		
 	}

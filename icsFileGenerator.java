@@ -16,7 +16,7 @@ public class icsFileGenerator
 		//empty string to hold user input
 		String classificationCheckString;
 		//empty string to hold user input
-		String classificationInputString;//change back after testing
+		String classificationInputString;
 		
 		//will be what we use to check if user wants to input a classification
 		Scanner classificationInput = new Scanner (System.in);

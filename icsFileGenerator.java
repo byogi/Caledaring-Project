@@ -4,6 +4,7 @@
  */
 
 import java.io.*;
+import java.util.*;
 
 public class icsFileGenerator 
 {
@@ -12,6 +13,39 @@ public class icsFileGenerator
 		
 		//will hold the details for the .ics file in this string
 		String calendarDetails;
+		//empty string to hold user input
+		String classificationCheckString;
+		//empty string to hold user input
+		String classificationInputString;//change back after testing
+		
+		//will be what we use to check if user wants to input a classification
+		Scanner classificationInput = new Scanner (System.in);
+		
+		
+		
+		System.out.println("Would you like to use the classification feature? "
+						+  "\nIf you would please type 'y', if not please type 'n': ");
+		
+		classificationCheckString = classificationInput.next();
+		
+		if (classificationCheckString.compareTo("y")== 0)
+		{
+			System.out.println("Please type whether you would like your classifcation to be: PUBLIC, PRIVATE, or CONFIDENTIAL);"
+					+ "\nPlease enter your classification now: ");
+			
+			classificationInputString = classificationInput.next();
+			
+		}
+		
+		else
+		{
+			System.out.println("By default classification will be set to: PUBLIC");
+			classificationInputString = "PUBLIC";
+		}
+				
+		
+		
+		
 		
 		calendarDetails = "BEGIN:VCALENDAR\n"
 			+"PRODID:-\n"//Google Inc//Google Calendar 70.9054//EN
@@ -32,6 +66,7 @@ public class icsFileGenerator
 			+"SEQUENCE:0\n"
 			+"STATUS:CONFIRMED\n"
 			+"SUMMARY:Test Event\n"
+			+"CLASS:" + classificationInputString +"\n"//added for deliverable 2
 			+"TRANSP:OPAQUE\n"
 			+"END:VEVENT\n"
 			+"END:VCALENDAR\n";
@@ -50,6 +85,7 @@ public class icsFileGenerator
 			System.out.println("File not found!");
 		}
 		
+		classificationInput.close();//close scanner
 		
 	}
 

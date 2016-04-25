@@ -9,8 +9,11 @@ import java.io.FileNotFoundException;//added for deliverable 3
 
 public class icsFileGenerator 
 {
+	/*
 	public static void main (String[] args)
 	{
+		
+		
 		
 		//will hold the details for the .ics file in this string
 		String calendarDetails;
@@ -88,14 +91,16 @@ public class icsFileGenerator
 		
 		classificationInput.close();//close scanner
 		
+		
+		
 	}
-	
+	*/
 	//---Method(s) for deliverable 3 start here---//
 	
 	
 	
 	//This Method will allow user to input any number of ICS Files 
-	public static void inputIcsFile(ArrayList<File> files) throws IOException, FileNotFoundException
+	public static void inputIcsFile(ArrayList<File> files) throws IOException, FileNotFoundException, NullPointerException
 	{
 		//below is the set up for variables we'll use//
 		int totalNumFiles = 0;//the integer value of the number of files user plans to enter
@@ -121,12 +126,21 @@ public class icsFileGenerator
 			finally
 			{
 				currIndex ++;//after try block executes currIndex will be increased by a value of 1
+				System.out.println("Succesfully added file");
 			}
 			
 		}
 		
 		
 		userInput.close();//close the scanner after loop completes
+	}
+	
+	//test's for main
+	public static void main (String [] args) throws FileNotFoundException, IOException, NullPointerException
+	{
+		//icsFileGenerator test = new icsFileGenerator();
+		ArrayList<File>test = new ArrayList<File>();
+		icsFileGenerator.inputIcsFile(test);
 	}
 
 }

@@ -9,11 +9,10 @@ import java.io.FileNotFoundException;//added for deliverable 3
 
 public class icsFileGenerator 
 {
-	/*
+
+	/**
 	public static void main (String[] args)
 	{
-		
-		
 		
 		//will hold the details for the .ics file in this string
 		String calendarDetails;
@@ -24,7 +23,6 @@ public class icsFileGenerator
 		
 		//will be what we use to check if user wants to input a classification
 		Scanner classificationInput = new Scanner (System.in);
-		
 		
 		
 		System.out.println("Would you like to use the classification feature? "
@@ -47,10 +45,6 @@ public class icsFileGenerator
 			classificationInputString = "PUBLIC";
 		}
 				
-		
-		
-		
-		
 		calendarDetails = "BEGIN:VCALENDAR\n"
 			+"PRODID:-\n"//Google Inc//Google Calendar 70.9054//EN
 			+"VERSION:2.0\n"
@@ -90,14 +84,9 @@ public class icsFileGenerator
 		}
 		
 		classificationInput.close();//close scanner
-		
-		
-		
 	}
-	*/
+	**/
 	//---Method(s) for deliverable 3 start here---//
-	
-	
 	
 	//This Method will allow user to input any number of ICS Files 
 	public static void inputIcsFile(ArrayList<File> files) throws IOException, FileNotFoundException, NullPointerException
@@ -131,9 +120,10 @@ public class icsFileGenerator
 			
 		}
 		
-		
+
 		userInput.close();//close the scanner after loop completes
 	}
+	
 	
 	//test's for main
 	public static void main (String [] args) throws FileNotFoundException, IOException, NullPointerException
@@ -141,9 +131,11 @@ public class icsFileGenerator
 		//icsFileGenerator test = new icsFileGenerator();
 		ArrayList<File>test = new ArrayList<File>();
 		icsFileGenerator.inputIcsFile(test);
+		System.out.println(test.toString());//print back file name 
 	}
-
+	
 }
+
 
 
 
